@@ -1,0 +1,73 @@
+// Font
+@use "color" as color;
+@use "device" as device;
+
+$primary-font: "Roboto", sans-serif;
+
+h1,
+.title-1 {
+  font-family: $primary-font;
+  font-weight: 200;
+  font-size: clamp(72px, 2.4vw, 96px);
+  letter-spacing: -1.5px;
+}
+h2,
+.title-2 {
+  font-family: $primary-font;
+  font-weight: 300;
+  font-size: clamp(48px, 2vw, 60px);
+  letter-spacing: -0.5px;
+}
+h3,
+.title-3 {
+  font-family: $primary-font;
+  font-weight: 400;
+  font-size: clamp(40px, 1.8vw, 48px);
+}
+h4,
+.title-4 {
+  font-family: $primary-font;
+  font-weight: 400;
+  font-size: clamp(28px, 1.6vw, 34px);
+  letter-spacing: 0.25px;
+}
+h5,
+.title-5 {
+  font-family: $primary-font;
+  font-weight: 400;
+  font-size: clamp(22px, 1.4vw, 24px);
+  letter-spacing: 0.25px;
+}
+h6,
+.title-6 {
+  font-family: $primary-font;
+  font-weight: 500;
+  font-size: clamp(18px, 1.2vw, 20px);
+  letter-spacing: 0.15px;
+}
+
+p,
+a,
+.text-body {
+  font-family: $primary-font;
+  font-weight: 400;
+  font-size: clamp(15px, 1vw, 17px);
+  letter-spacing: 0.5px;
+}
+
+.text-small {
+    font-family: $primary-font;
+    font-weight: 400;
+    font-size: clamp(13px, .9vw, 15px);
+    letter-spacing: 0.5px;
+  }
+
+.bold {
+  font-weight: 500;
+}
+.medium {
+  font-weight: 500;
+}
+.uppercase {
+  text-transform: uppercase;
+}

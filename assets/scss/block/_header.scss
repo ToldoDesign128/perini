@@ -1,0 +1,83 @@
+// Header
+
+@use "/assets/scss/variable/variable" as v;
+
+.top-bar {
+  display: none;
+  width: 100%;
+  background-color: v.$blue-75;
+  padding: 20px;
+
+  @include v.respond-to(lg) {
+    display: block;
+  }
+
+  .top-bar-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .link-wrap {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+
+      .indirizzo,
+      .telefono {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .telefono-link {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+        }
+      }
+    }
+    .link-page {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .link-1,
+      .link-2,
+      .cta,
+      .social {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .cta{
+        padding: 10px 20px;
+        background-color: v.$gray-0;
+        border: 1px solid v.$gray-0;
+        color: v.$blue-100;
+        transition: all .4s cubic-bezier(.215, .61, .355, 1);
+
+        &:hover{
+            background-color: v.$blue-100;
+            border: 1px solid v.$gray-0;
+            color: v.$white;
+            opacity: 1;
+        }
+
+      }
+
+      .social {
+        list-style: none;
+      }
+    }
+
+    a {
+      color: v.$white;
+      opacity: 1;
+      transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}

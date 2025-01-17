@@ -1,0 +1,251 @@
+/*!
+Theme Name: Perini
+Theme URI: https://hgblu.com/
+Author: HG Blu
+Author URI: https://hgblu.com/
+Description: Custom theme for Perini Carlo
+Tags: blog, accessibility-ready, grid-layout, custom-header, custom-menu, flexible-header, block-styles
+Version: 1.0
+Requires at least: 6.4.3
+Tested up to: 6.4.3
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: hg-blu-perini
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+h1,
+.title-1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 200;
+  font-size: clamp(72px, 2.4vw, 96px);
+  letter-spacing: -1.5px;
+}
+
+h2,
+.title-2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: clamp(48px, 2vw, 60px);
+  letter-spacing: -0.5px;
+}
+
+h3,
+.title-3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: clamp(40px, 1.8vw, 48px);
+}
+
+h4,
+.title-4 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: clamp(28px, 1.6vw, 34px);
+  letter-spacing: 0.25px;
+}
+
+h5,
+.title-5 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: clamp(22px, 1.4vw, 24px);
+  letter-spacing: 0.25px;
+}
+
+h6,
+.title-6 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: clamp(18px, 1.2vw, 20px);
+  letter-spacing: 0.15px;
+}
+
+p,
+a,
+.text-body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: clamp(15px, 1vw, 17px);
+  letter-spacing: 0.5px;
+}
+
+.text-small {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: clamp(13px, 0.9vw, 15px);
+  letter-spacing: 0.5px;
+}
+
+.bold {
+  font-weight: 500;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Rimuove margini */
+body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+/* Imposta altezza e larghezza al 100% per il body */
+html, body {
+  height: 100%;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+/* Rimuove padding per liste */
+ul, ol {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
+}
+
+ul[role=list], ol[role=list] {
+  list-style: none;
+  padding: 0;
+}
+
+/* Azzera margini per immagini */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Imposta una linea di base coerente */
+body {
+  line-height: 1.5;
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(19px, 2vw, 22px);
+}
+
+button {
+  all: unset;
+}
+
+/* Link senza decorazioni */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 640px;
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    max-width: 984px;
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1220px;
+  }
+}
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1456px;
+  }
+}
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1640px;
+  }
+}
+
+.top-bar {
+  display: none;
+  width: 100%;
+  background-color: #003781;
+  padding: 20px;
+}
+@media (min-width: 1024px) {
+  .top-bar {
+    display: block;
+  }
+}
+.top-bar .top-bar-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.top-bar .top-bar-wrap .link-wrap {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.top-bar .top-bar-wrap .link-wrap .indirizzo,
+.top-bar .top-bar-wrap .link-wrap .telefono {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.top-bar .top-bar-wrap .link-wrap .indirizzo .telefono-link,
+.top-bar .top-bar-wrap .link-wrap .telefono .telefono-link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.top-bar .top-bar-wrap .link-page {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.top-bar .top-bar-wrap .link-page .link-1,
+.top-bar .top-bar-wrap .link-page .link-2,
+.top-bar .top-bar-wrap .link-page .cta,
+.top-bar .top-bar-wrap .link-page .social {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.top-bar .top-bar-wrap .link-page .cta {
+  padding: 10px 20px;
+  background-color: #b8c2cc;
+  border: 1px solid #b8c2cc;
+  color: #012f6a;
+  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.top-bar .top-bar-wrap .link-page .cta:hover {
+  background-color: #012f6a;
+  border: 1px solid #b8c2cc;
+  color: #ffffff;
+  opacity: 1;
+}
+.top-bar .top-bar-wrap .link-page .social {
+  list-style: none;
+}
+.top-bar .top-bar-wrap a {
+  color: #ffffff;
+  opacity: 1;
+  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.top-bar .top-bar-wrap a:hover {
+  opacity: 0.5;
+}
