@@ -161,7 +161,7 @@
     <header>
         <div class="header-wrap container">
             <a href="<?php echo home_url(); ?>" class="header-logo">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="Logo">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/Logo.png" alt="Logo">
             </a>
             <nav class="main-navigation">
                 <?php
@@ -169,6 +169,7 @@
                     'theme_location' => 'primary',
                     'container' => false,
                     'menu_class' => 'nav-menu',
+                    'walker' => new Custom_Walker_Nav_Menu()
                 ));
                 ?>
             </nav>
@@ -184,11 +185,63 @@
                     <a href="<?php echo esc_url(get_permalink(get_option('yith_wcwl_wishlist_page_id'))); ?>" class="header-icon">
                         <i class="fas fa-heart"></i>
                     </a>
-                    <a href="<?php echo wc_get_cart_url(); ?>" class="header-icon">
+                    <a href="<?php echo wc_get_cart_url(); ?>" class="cart-icon">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="cart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
                     </a>
                 </div>
             </div>
+
+            <div id="hamburgerBtn" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
+
+    <div id="mobileMenu" class="mobile-panel">
+        <nav class="main-navigation">
+            <?php
+            wp_nav_menu(array(
+                'theme_location' => 'primary',
+                'container' => false,
+                'menu_class' => 'nav-menu',
+                'walker' => new Custom_Walker_Nav_Menu()
+            ));
+            ?>
+        </nav>
+
+        <div class="header-extras">
+            <!-- Sezione di ricerca -->
+            <div class="header-search">
+                <?php get_search_form(); ?>
+            </div>
+
+            <div class="mobile-shop">
+                <?php
+                $link_2 = get_field('link_2', 'option');
+                if ($link_2):
+                    $link_2_url = $link_2['url'];
+                    $link_2_title = $link_2['title'];
+                    $link_2_target = $link_2['target'] ? $link_2['target'] : '_self';
+                ?>
+
+                    <a class="link-2 text-small" href="<?php echo esc_url($link_2_url); ?>" target="<?php echo esc_attr($link_2_target); ?>"><?php echo esc_html($link_2_title); ?></a>
+
+                <?php endif; ?>
+
+                <!-- Icone di wishlist e carrello -->
+                <div class="header-icons">
+                    <a href="<?php echo esc_url(get_permalink(get_option('yith_wcwl_wishlist_page_id'))); ?>" class="header-icon">
+                        <i class="fas fa-heart"></i>
+                    </a>
+                    <a href="<?php echo wc_get_cart_url(); ?>" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>

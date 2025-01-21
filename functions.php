@@ -80,12 +80,6 @@ function remove_content_editor()
 	remove_post_type_support('page', 'editor');
 }
 
-function perini_enqueue_scripts() {
-    wp_enqueue_script('perini-scripts', get_template_directory_uri() . '/scripts.js', array('jquery'), null, true);
-    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
-}
-add_action('wp_enqueue_scripts', 'perini_enqueue_scripts');
-
 // Funzione per caricare Swiper.js e il relativo CSS
 function enqueue_swiper_assets()
 {
@@ -103,6 +97,8 @@ function add_theme_scripts()
 {
 	wp_enqueue_style('style', get_stylesheet_uri());
 
+    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
 	wp_enqueue_script('scripts', get_template_directory_uri() . '/scripts.js', array('jquery'), 1.1, true);
 }
 add_action('wp_enqueue_scripts', 'add_theme_scripts');
@@ -118,3 +114,6 @@ if (function_exists('acf_add_options_page')) {
 		'redirect'      => false
 	));
 }
+
+// Functions Parts
+require get_template_directory() . '/functions-parts/header-walker.php';
