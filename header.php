@@ -26,6 +26,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+    
     <!-- Top Bar -->
     <section class="top-bar">
         <div class="top-bar-wrap container">

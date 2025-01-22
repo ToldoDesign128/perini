@@ -4,7 +4,6 @@
 
 .top-bar {
   display: none;
-  position: relative;
   z-index: 100;
   width: 100%;
   background-color: v.$blue-75;
@@ -82,10 +81,10 @@
     }
   }
 }
-
 header {
   background-color: v.$white;
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 100;
 
   .header-wrap {
@@ -327,7 +326,6 @@ header {
     }
   }
 }
-
 .mobile-panel {
   width: 100vw;
   display: block;
