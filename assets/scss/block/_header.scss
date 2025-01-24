@@ -127,6 +127,14 @@ header {
 
           a {
             text-transform: uppercase;
+            opacity: 1;
+            transition: all .4s cubic-bezier(.215, .61, .355, 1);
+
+            @include v.respond-to(lg) {
+              &:hover {
+                opacity: 0.5;
+              }
+            }
           }
           .submenu-toggle {
             .fa-chevron-down {

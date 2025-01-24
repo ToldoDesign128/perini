@@ -1,0 +1,17 @@
+// Brand Block
+
+@use "/assets/scss/variable/variable" as v;
+
+.brand{
+    width: 100%;
+    overflow-x: hidden;
+    background-color: v.$gray-0;
+
+    .brand-wrap{
+        padding: 40px 20px;
+
+        @include v.respond-to(lg){
+            padding: 60px 0s;
+        }
+    }
+}

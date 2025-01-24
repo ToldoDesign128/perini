@@ -117,3 +117,6 @@ if (function_exists('acf_add_options_page')) {
 
 // Functions Parts
 require get_template_directory() . '/functions-parts/header-walker.php';
+
+// CPT
+require get_template_directory() . '/functions-parts/cpt-testimonianze.php';

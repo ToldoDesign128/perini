@@ -14,8 +14,8 @@ body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd {
 
 /* Imposta altezza e larghezza al 100% per il body */
 html, body {
-  height: 100%;
   width: 100%;
+  overflow-x: clip;
   scroll-behavior: smooth;
 }
 
@@ -43,6 +43,7 @@ img {
 
 /* Imposta una linea di base coerente */
 body {
+  height: 100%;
   line-height: 1.5;
   font-family: v.$primary-font;
   font-size: clamp(19px, 2vw, 22px);
