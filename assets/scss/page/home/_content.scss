@@ -1,0 +1,284 @@
+// Content Home
+
+@use "/assets/scss/variable/variable" as v;
+
+.content {
+  margin-top: 50px;
+  @include v.respond-to(lg) {
+    margin-top: 100px;
+  }
+  @include v.respond-to(xl) {
+    margin-top: 120px;
+  }
+  .banner {
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    @include v.respond-to(lg) {
+      padding: 0;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    img {
+      display: block;
+      height: 100%;
+      width: auto;
+    }
+    .banner-title {
+      color: v.$blue-75;
+      text-align: center;
+    }
+  }
+  .chi-siamo {
+    width: 100%;
+    margin-top: 50px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    @include v.respond-to(lg) {
+      margin-top: 100px;
+      padding: 0;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    @include v.respond-to(xl) {
+      margin-top: 120px;
+    }
+    .chi-siamo-info {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+
+      @include v.respond-to(lg) {
+        width: 55%;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      .about-titoletto {
+        color: v.$blue-100;
+        text-transform: uppercase;
+        text-align: center;
+        @include v.respond-to(lg) {
+          text-align: left;
+        }
+      }
+      .about-titolo,
+      .about-quote {
+        color: v.$blue-75;
+        text-align: center;
+        @include v.respond-to(lg) {
+          max-width: 90%;
+          text-align: left;
+        }
+      }
+      .about-quote {
+        p {
+          font-weight: 400;
+          font-size: clamp(22px, 1.4vw, 24px);
+          letter-spacing: 0.25px;
+
+          @include v.respond-to(lg) {
+            text-align: right;
+          }
+
+          em {
+            color: v.$black;
+            font-size: clamp(18px, 1.2vw, 20px);
+          }
+        }
+      }
+      .about-text {
+        text-align: center;
+        @include v.respond-to(lg) {
+          max-width: 80%;
+          text-align: left;
+        }
+      }
+    }
+    .video {
+      width: 100%;
+      @include v.respond-to(lg) {
+        width: 45%;
+      }
+      iframe {
+        width: 100%;
+        height: 100%;
+        min-height: 400px;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.number {
+  margin-top: 50px;
+  background-color: v.$gray-100;
+  @include v.respond-to(lg) {
+    margin-top: 100px;
+  }
+  @include v.respond-to(xl) {
+    margin-top: 120px;
+  }
+  .number-wrap {
+    padding: 80px 20px;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+    @include v.respond-to(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include v.respond-to(lg) {
+      padding: 100px 0;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include v.respond-to(xl) {
+      padding: 120px 0;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .repeater-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      @include v.respond-to(lg) {
+        gap: 20px;
+      }
+
+      .title,
+      .value,
+      .text {
+        color: v.$white;
+      }
+    }
+  }
+}
+.prodotti {
+  margin: 50px auto;
+  padding: 0 20px;
+  @include v.respond-to(lg) {
+    margin: 100px auto;
+    padding: 0;
+  }
+  @include v.respond-to(xl) {
+    margin: 120px auto;
+  }
+  .prodotti-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .prodotti-titoletto {
+      color: v.$blue-100;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .prodotti-titolo {
+      color: v.$blue-75;
+      text-align: center;
+    }
+  }
+  .prodotti-loop {
+    margin-top: 30px;
+    @include v.respond-to(lg) {
+      margin-top: 60px;
+    }
+    @include v.respond-to(xl) {
+      margin-top: 80px;
+    }
+    .products {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+
+      @include v.respond-to(md) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include v.respond-to(lg) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+      }
+      @include v.respond-to(xl) {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+      }
+      .product {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        border: 1px solid v.$gray-100;
+
+        .woocommerce-LoopProduct-link {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          transition: all .4s cubic-bezier(.215, .61, .355, 1);
+
+          .onsale {
+            position: absolute;
+            z-index: 1;
+            padding: 10px 20px;
+            background-color: v.$blue-50;
+            color: v.$white;
+          }
+          img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1;
+            object-fit: cover;
+            transition: all .4s cubic-bezier(.215, .61, .355, 1);
+          }
+          .woocommerce-loop-product__title {
+            color: v.$blue-100;
+            font-weight: 400;
+            font-size: clamp(28px, 1.6vw, 34px);
+            letter-spacing: 0.25px;
+            line-height: 1.3;
+            transition: all .4s cubic-bezier(.215, .61, .355, 1);
+          }
+
+          @include v.respond-to(lg) {
+            &:hover{
+              img{
+                filter: brightness(120%);
+              }
+              .woocommerce-loop-product__title{
+                color: v.$blue-50;
+              }
+            }
+          }
+        }
+        .button{
+          padding: 10px 20px;
+          background-color: v.$blue-75;
+          color: v.$white;
+          border: 1px solid v.$blue-75;
+          text-align: center;
+          transition: all .4s cubic-bezier(.215, .61, .355, 1);
+
+          @include v.respond-to(lg) {
+            padding: 15px 30px;
+            &:hover{
+              background-color: v.$white;
+              color: v.$blue-75;
+            }
+          }
+        }
+      }
+    }
+  }
+}

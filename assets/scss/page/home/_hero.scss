@@ -3,12 +3,12 @@
 @use "/assets/scss/variable/variable" as v;
 
 .hero-home {
-  width: 100vw;
-  height: 100vh;
-
+  width: 100%;
+  height: 100%;
+  
   .hero-wrap {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
 
     .repeater-hero {
       width: 100%;
@@ -36,6 +36,7 @@
         .titoletto {
           color: v.$white;
           padding: 0 20px;
+          text-align: center;
         }
         .titolo {
           padding: 0 20px;
@@ -43,10 +44,12 @@
           font-size: clamp(96px, 3vw, 128px);
           letter-spacing: -1.5px;
           line-height: 1;
+          text-align: center;
         }
         .desc {
           padding: 0 20px;
           color: v.$white;
+          text-align: center;
         }
         .cta{
           margin-top: 10px;
@@ -100,6 +103,7 @@
         gap: 16px;
 
         .titolo{
+          text-align: center;
           color: v.$blue-100;
         }
         .desc{
