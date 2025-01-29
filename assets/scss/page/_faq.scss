@@ -1,0 +1,117 @@
+// FAQ
+
+@use "/assets/scss/variable/variable" as v;
+
+.content-faq {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 0 20px;
+  @include v.respond-to(lg) {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 0;
+  }
+  @include v.respond-to(xl) {
+    margin-top: 120px;
+    margin-bottom: 120px;
+  }
+  .faq-wrap {
+    .faq-block {
+      margin-top: 40px;
+      @include v.respond-to(lg) {
+        margin-top: 80px;
+      }
+      @include v.respond-to(xl) {
+        margin-top: 100px;
+      }
+      .block-title {
+        color: v.$blue-75;
+      }
+      .faq-list {
+        list-style: none;
+        width: 100%;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include v.respond-to(lg) {
+          margin-top: 30px;
+        }
+
+        .faq-item {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          background-color: v.$gray-0;
+          overflow-y: hidden;
+
+          .domanda {
+            padding: 15px 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+
+            @include v.respond-to(lg) {
+              padding: 15px 20px;
+            }
+            .icon-plus {
+              display: block;
+              font-size: 2.5rem;
+              line-height: 1;
+              font-weight: 100;
+              transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+            }
+          }
+          .risposta {
+            max-height: 0px;
+            padding: 0 20px;
+            transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+            @include v.respond-to(lg) {
+              padding: 0 20px;
+            }
+          }
+        }
+
+        .faq-active {
+          .domanda {
+            .icon-plus {
+              transform: rotate(45deg);
+            }
+          }
+          .risposta {
+            max-height: 1000px;
+            padding: 20px;
+
+            @include v.respond-to(lg) {
+              padding: 30px 20px;
+            }
+          }
+        }
+      }
+      .block-extra {
+        margin-top: 20px;
+
+        @include v.respond-to(lg) {
+          margin-top: 30px;
+        }
+
+        a {
+          color: v.$blue-75;
+          opacity: 1;
+          transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+          @include v.respond-to(lg) {
+            &:hover {
+              color: v.$blue-50;
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+    }
+  }
+}

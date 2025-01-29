@@ -1,6 +1,8 @@
 <?php
 get_header(); ?>
 <main class="archive-product">
+    <!-- Hero -->
+    <?php get_template_part('/template-parts/hero-page'); ?>
 
     <div class="container">
         <h1>Archivio</h1>

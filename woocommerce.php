@@ -1,8 +1,13 @@
 <?php
 get_header(); ?>
 <main class="woocommerce">
-    <div class="woocommerce-content container">
-        <?php woocommerce_content(); ?>
-    </div>
+    <!-- Hero -->
+    <?php get_template_part('/template-parts/hero-page'); ?>
+    <!-- Content -->
+    <section class="">
+        <div class="woocommerce-content container">
+            <?php woocommerce_content(); ?>
+        </div>
+    </section>
 </main>
 <?php get_footer(); ?>

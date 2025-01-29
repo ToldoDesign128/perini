@@ -137,6 +137,84 @@ get_header(); ?>
     </section>
     <!-- Testimonianze Block -->
     <?php get_template_part('/template-parts/testimonianze-block'); ?>
+    <!-- Loop Post -->
+    <section class="post container">
+
+        <?php
+        //    get_template_part('/template-parts/page/facebook-block');
+        ?>
+
+        <div class="post-block">
+            <div class="post-intro">
+                <?php
+                $post_titoletto = get_field('titoletto_news');
+                if (!empty($post_titoletto)): ?>
+                    <h5 class="post-titoletto title-6"><?php echo $post_titoletto; ?></h5>
+                <?php endif;
+                $post_titolo = get_field('titolo_news');
+                if (!empty($post_titolo)): ?>
+                    <p class="post-titolo title-3 medium"><?php echo $post_titolo; ?></p>
+                <?php endif; ?>
+            </div>
+            <div class="post-loop">
+                <?php /* Post Loop */
+
+                $post_loop = new WP_Query(array(
+                    'post_type'     => 'post',
+                    'posts_per_page' => 4,
+                    'orderby'        => 'date',
+                    'order'          => 'DESC',
+                )); ?>
+
+                <?php if ($post_loop->have_posts()) : ?>
+                    <ul class="post-list">
+                        <?php while ($post_loop->have_posts()) : $post_loop->the_post(); ?>
+                            <li class="post-item">
+                                <a href="<?php echo the_permalink(); ?>" class="post-link">
+                                    <div class="post-img">
+                                        <p class="date">
+                                            <?php the_time('j M') ?>
+                                        </p>
+                                        <?php the_post_thumbnail('thumbnail', array('class' => '', 'alt' => get_the_title())); ?>
+                                    </div>
+                                    <div class="post-content">
+                                        <?php
+                                        $categories = get_the_category();
+                                        if (!empty($categories)) {
+                                            echo '<p class="post-categories">';
+                                            foreach ($categories as $category) {
+                                                echo esc_html($category->name) . ' ';
+                                            }
+                                            echo '</?php>';
+                                        }
+                                        ?>
+                                        <p class="post-title title-4"><?php the_title(); ?></p>
+                                        <p class="read-more">Leggi tutto</p>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <?php wp_reset_postdata(); ?>
+                        <?php endwhile; ?>
+                    </ul>
+
+                <?php endif; ?>
+            </div>
+            <div class="post-cta">
+                <?php
+                $link_news = get_field('link_blog');
+                if ($link_news):
+                    $link_news_url = $link_news['url'];
+                    $link_news_title = $link_news['title'];
+                    $link_news_target = $link_news['target'] ? $link_news['target'] : '_self';
+                ?>
+                    <a class="btn" href="<?php echo esc_url($link_news_url); ?>" target="<?php echo esc_attr($link_news_target); ?>"><?php echo esc_html($link_news_title); ?></a>
+                <?php endif; ?>
+            </div>
+        </div>
+    </section>
+    <!-- Form Block -->
+    <?php get_template_part('/template-parts/form-block'); ?>
     <!-- Brand Block -->
     <?php get_template_part('/template-parts/brand-block'); ?>
 </main>
