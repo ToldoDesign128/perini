@@ -1,0 +1,403 @@
+// About
+
+@use "/assets/scss/variable/variable" as v;
+
+.about {
+  .about-content {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 0 20px;
+    @include v.respond-to(lg) {
+      margin-top: 100px;
+      margin-bottom: 100px;
+      padding: 0;
+    }
+    @include v.respond-to(xl) {
+      margin-top: 120px;
+      margin-bottom: 120px;
+    }
+    .noi-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+
+      @include v.respond-to(md) {
+        flex-direction: row;
+      }
+      .noi-card {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+
+        @include v.respond-to(md) {
+          max-width: 48%;
+        }
+        @include v.respond-to(lg) {
+          max-width: 30%;
+        }
+        .image {
+          aspect-ratio: 1/1;
+          width: 100%;
+          overflow: hidden;
+
+          img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .nome {
+          color: v.$blue-75;
+        }
+      }
+    }
+    .story-block {
+      margin: 50px auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      @include v.respond-to(lg) {
+        margin: 100px auto;
+      }
+      @include v.respond-to(xl) {
+        margin: 120px auto;
+      }
+      .titoletto-story {
+        color: v.$blue-100;
+        text-transform: uppercase;
+        text-align: center;
+      }
+      .titolo-story {
+        color: v.$blue-75;
+        text-align: center;
+
+        @include v.respond-to(md) {
+          max-width: 80%;
+        }
+        @include v.respond-to(lg) {
+          max-width: 60%;
+        }
+      }
+      .text-story {
+        text-align: center;
+        margin-top: 40px;
+
+        @include v.respond-to(md) {
+          max-width: 90%;
+          margin-top: 60px;
+        }
+        @include v.respond-to(lg) {
+          max-width: 80%;
+          margin-top: 80px;
+        }
+        @include v.respond-to(xxl) {
+          max-width: 70%;
+        }
+        p {
+          padding-bottom: 20px;
+        }
+      }
+      .repeater-valori {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 40px;
+
+        @include v.respond-to(md) {
+          margin-top: 60px;
+        }
+        @include v.respond-to(xl) {
+          gap: 40px;
+          margin-top: 70px;
+        }
+        .valori-card {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+          max-width: 100%;
+
+          @include v.respond-to(md) {
+            max-width: 48%;
+          }
+          @include v.respond-to(lg) {
+            max-width: 30%;
+          }
+
+          img {
+            display: block;
+          }
+          .titolo-valore {
+            color: v.$blue-100;
+            text-align: center;
+          }
+          .testo-valore {
+            max-width: 90%;
+            text-align: center;
+
+            @include v.respond-to(md) {
+              max-width: 80%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .punti-block {
+    background-color: v.$gray-0;
+    margin-top: 40px;
+
+    @include v.respond-to(md) {
+      margin-top: 60px;
+    }
+    @include v.respond-to(xl) {
+      margin-top: 70px;
+    }
+    .punti-wrap {
+      padding: 40px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      @include v.respond-to(md) {
+        padding: 60px 0;
+      }
+      @include v.respond-to(lg) {
+        padding: 80px 0;
+      }
+      .titoletto-punti {
+        color: v.$blue-100;
+        text-align: center;
+      }
+      .titolo-punti {
+        color: v.$blue-75;
+        text-align: center;
+
+        @include v.respond-to(md) {
+          max-width: 80%;
+        }
+        @include v.respond-to(lg) {
+          max-width: 60%;
+        }
+      }
+      .repeater-punti {
+        max-width: 100%;
+        margin-top: 30px;
+        @include v.respond-to(md) {
+          margin-top: 40px;
+        }
+        @include v.respond-to(lg) {
+          margin-top: 50px;
+        }
+        .swiper-wrapper {
+          .valori-card {
+            background-color: v.$white;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+
+            .valori-title {
+              color: v.$blue-100;
+              text-align: center;
+            }
+            .valori-text {
+              max-width: 80%;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+  .team-block {
+    margin-top: 40px;
+
+    @include v.respond-to(md) {
+      margin-top: 60px;
+    }
+    @include v.respond-to(xl) {
+      margin-top: 70px;
+    }
+    .team-wrap {
+      padding: 40px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      @include v.respond-to(md) {
+        padding: 60px 0;
+      }
+      @include v.respond-to(lg) {
+        padding: 80px 0;
+      }
+      .titoletto-team {
+        color: v.$blue-100;
+        text-align: center;
+      }
+      .titolo-team {
+        color: v.$blue-75;
+        text-align: center;
+
+        @include v.respond-to(md) {
+          max-width: 80%;
+        }
+        @include v.respond-to(lg) {
+          max-width: 60%;
+        }
+      }
+      .repeater-team {
+        padding: 40px 0 0 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+
+        @include v.respond-to(md) {
+          padding: 60px 0 0 0;
+          grid-template-columns: repeat(2, 1fr);
+        }
+        @include v.respond-to(lg) {
+          gap: 30px;
+          padding: 80px 0 0 0;
+          grid-template-columns: repeat(3, 1fr);
+        }
+        @include v.respond-to(lg) {
+          grid-template-columns: repeat(4, 1fr);
+        }
+        .team-card {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+          padding: 20px 20px 40px 20px;
+          background-color: v.$gray-0;
+
+          .image {
+            aspect-ratio: 5 / 6;
+            width: 100%;
+
+            img {
+              display: block;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+          .team-name {
+            color: v.$blue-75;
+            text-align: center;
+          }
+          .team-role {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  .cosa-facciamo-block {
+    margin-top: 40px;
+
+    @include v.respond-to(md) {
+      margin-top: 60px;
+    }
+    @include v.respond-to(xl) {
+      margin-top: 70px;
+    }
+    .cosa-facciamo-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      
+      .titolo-cosa-facciamo {
+        color: v.$blue-75;
+        text-align: center;
+
+        @include v.respond-to(md) {
+          max-width: 80%;
+        }
+        @include v.respond-to(lg) {
+          max-width: 60%;
+        }
+      }
+      .repeater-cosa-facciamo{
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+
+        @include v.respond-to(md) {
+          margin-top: 60px;
+          grid-template-columns: repeat(2, 1fr);
+        }
+        @include v.respond-to(lg) {
+          gap: 30px;
+          margin-top: 80px;
+          grid-template-columns: repeat(4, 1fr);
+        }
+        .cosa-facciamo-card{
+          background-color: v.$white;
+          border: 1px solid v.$blue-100;
+          padding: 40px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+
+          .title-card{
+            color: v.$blue-50;
+            text-align: center;
+          }
+          .action-card{
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  .cta-block{
+    margin-top: -50px;
+    background-color: v.$gray-25;
+    .cta-wrap{
+      padding: 90px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+
+      @include v.respond-to(md) {
+        padding: 110px 0;
+      }
+      @include v.respond-to(lg) {
+        padding: 130px 0;
+      }
+      .titoletto-cta{
+        color: v.$blue-100;
+        text-align: center;
+        max-width: 80%;
+        @include v.respond-to(md) {
+          max-width: 60%;
+        }
+        @include v.respond-to(lg) {
+          max-width: 50%;
+        }
+      }
+    }
+  }
+}

@@ -1,3 +1,5 @@
 // Export Pages
+
+@use '/assets/scss/page/about' as about;
 @use '/assets/scss/page/home/front-page' as home;
 @use '/assets/scss/page/faq' as faq;

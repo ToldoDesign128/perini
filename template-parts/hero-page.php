@@ -1,7 +1,11 @@
 <section class="hero-page">
     <div class="hero-page-content container">
         <h1 class="title title-1 medium">
-            <?php the_title(); ?>
+            <?php
+            $title = get_field('titolo_hero');
+            if ($title) {
+                echo $title;
+            }; ?>
         </h1>
     </div>
     <span class="bg-gradient"></span>
