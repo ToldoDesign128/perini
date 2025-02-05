@@ -1,0 +1,70 @@
+// Blog
+
+@use "/assets/scss/variable/variable" as v;
+
+.blog {
+  .blog-content {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 0 20px;
+    @include v.respond-to(lg) {
+      margin-top: 100px;
+      margin-bottom: 100px;
+      padding: 0;
+    }
+    @include v.respond-to(xl) {
+      margin-top: 120px;
+      margin-bottom: 120px;
+    }
+    .blog-wrap{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include v.respond-to(lg) {
+            flex-direction: row;
+            gap: 40px;
+        }
+        .category{
+            width: 100%;
+
+            @include v.respond-to(lg) {
+                width: 25%;
+                height: fit-content;
+                position: sticky;
+                top: 200px;
+            }
+            .cat-title{
+                color: v.$blue-75;
+            }
+            .cat-list{
+                list-style: none;
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                li{
+                    a{
+                        display: block;
+                        text-transform: uppercase;
+                        width: 100%;
+                        padding: 10px;
+                        background-color: v.$gray-0;
+                        opacity: 1;
+                        transition: all .6s cubic-bezier(.215, .61, .355, 1);
+                    }
+
+                    @include v.respond-to(lg) {
+                        &:hover{
+                            a{
+                                opacity: .6;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+  }
+}

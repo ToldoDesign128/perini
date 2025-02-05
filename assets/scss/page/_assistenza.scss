@@ -1,0 +1,141 @@
+// Assitstenza
+
+@use "/assets/scss/variable/variable" as v;
+.assistenza {
+  .assistenza-content {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include v.respond-to(lg) {
+      margin-top: 80px;
+      margin-bottom: 100px;
+      padding: 0;
+    }
+    @include v.respond-to(xl) {
+      margin-top: 100px;
+      margin-bottom: 120px;
+    }
+    .intro-text {
+      text-align: center;
+      max-width: 90%;
+
+      p {
+        margin-top: 20px;
+      }
+
+      @include v.respond-to(md) {
+        max-width: 80%;
+      }
+      @include v.respond-to(lg) {
+        max-width: 70%;
+      }
+    }
+    .repeater-assistenza {
+      padding: 40px 0 0 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+
+      @include v.respond-to(md) {
+        padding: 60px 0 0 0;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include v.respond-to(lg) {
+        max-width: 80%;
+        margin: 0 auto;
+        gap: 30px;
+        padding: 80px 0 0 0;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @include v.respond-to(xxl) {
+        max-width: 70%;
+      }
+      .assistenza-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 20px 40px 20px;
+        background-color: v.$gray-0;
+
+        .image {
+          aspect-ratio: 5 / 6;
+          width: 100%;
+
+          img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .assistenza-name {
+          color: v.$blue-75;
+          text-align: center;
+        }
+        .assistenza-role {
+          text-align: center;
+        }
+        .assistenza-link {
+          color: v.$blue-75;
+          opacity: 1;
+          transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+          @include v.respond-to(lg) {
+            &:hover {
+              opacity: 0.6;
+            }
+          }
+        }
+      }
+    }
+    .ricambi, .centro {
+      margin-top: 40px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @include v.respond-to(md) {
+        margin-top: 60px;
+      }
+      @include v.respond-to(lg) {
+        margin-top: 80px;
+      }
+      @include v.respond-to(xl) {
+        margin-top: 100px;
+      }
+      .ricambi-title, .centro-title{
+        color: v.$blue-75;
+      }
+      .repeater-ricambi, .repeater-centro{
+        padding-top: 30px;
+        list-style: none;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        @include v.respond-to(md) {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        @include v.respond-to(lg) {
+          gap: 30px;
+          grid-template-columns: repeat(4, 1fr);
+        }
+        @include v.respond-to(xxl) {
+          grid-template-columns: repeat(6, 1fr);
+        }
+        .ricambi-item,.centro-item{
+            border: 1px solid v.$gray-0;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+      }
+    }
+  }
+}
