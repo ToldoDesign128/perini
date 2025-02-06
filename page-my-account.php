@@ -3,11 +3,11 @@
 
 get_header(); ?>
 
-<main class="site-main">
+<main class="account-page">
     <!-- Hero -->
     <?php get_template_part('/template-parts/hero-page'); ?>
     
-    <div class="container">
+    <div class="account-content container"> 
         <?php echo do_shortcode('[woocommerce_my_account]'); ?>
     </div>
 </main>
