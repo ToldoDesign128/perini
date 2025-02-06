@@ -183,9 +183,6 @@
 
                 <!-- Icone di wishlist e carrello -->
                 <div class="header-icons">
-                    <a href="<?php echo esc_url(get_permalink(get_option('yith_wcwl_wishlist_page_id'))); ?>" class="header-icon">
-                        <i class="fas fa-heart"></i>
-                    </a>
                     <a href="<?php echo wc_get_cart_url(); ?>" class="cart-icon">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="cart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
@@ -234,9 +231,6 @@
 
                 <!-- Icone di wishlist e carrello -->
                 <div class="header-icons">
-                    <a href="<?php echo esc_url(get_permalink(get_option('yith_wcwl_wishlist_page_id'))); ?>" class="header-icon">
-                        <i class="fas fa-heart"></i>
-                    </a>
                     <a href="<?php echo wc_get_cart_url(); ?>" class="cart-icon">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="cart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>

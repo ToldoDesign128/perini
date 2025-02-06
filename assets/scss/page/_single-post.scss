@@ -1,0 +1,108 @@
+// Single Post
+
+@use "/assets/scss/variable/variable" as v;
+
+.post-blog {
+  .post-content {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 0 20px;
+    @include v.respond-to(lg) {
+      margin-top: 100px;
+      margin-bottom: 100px;
+      padding: 0;
+    }
+    @include v.respond-to(xl) {
+      margin-top: 120px;
+      margin-bottom: 120px;
+    }
+    .post-wrap {
+      width: 100%;
+
+      @include v.respond-to(md) {
+        max-width: 90%;
+        margin: 0 auto;
+      }
+      @include v.respond-to(lg) {
+        max-width: 80%;
+      }
+      @include v.respond-to(xl) {
+        max-width: 70%;
+      }
+
+      img {
+        margin-top: 20px;
+        height: auto;
+        @include v.respond-to(md) {
+          margin-top: 30px;
+        }
+      }
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin-top: 20px;
+        @include v.respond-to(md) {
+          margin-top: 30px;
+        }
+        a {
+          color: v.$blue-75;
+          opacity: 1;
+          transition: all .6s cubic-bezier(.215, .61, .355, 1);
+
+          @include v.respond-to(lg) {
+            &:hover {
+              opacity: 0.6;
+            }
+          }
+        }
+      }
+      ol,
+      ul {
+        padding-left: 20px;
+        margin-top: 20px;
+        @include v.respond-to(md) {
+          margin-top: 30px;
+        }
+      }
+    }
+    .post-tags{
+        margin-top: 40px;
+        width: 100%;
+
+      @include v.respond-to(md) {
+        margin-top: 60px;
+        max-width: 90%;
+        margin: 0 auto;
+      }
+      @include v.respond-to(lg) {
+        margin-top: 80px;
+        max-width: 80%;
+      }
+      @include v.respond-to(xl) {
+        max-width: 70%;
+      }
+      ul{
+        margin-top: 20px;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        @include v.respond-to(lg) {
+          margin-top: 30px;
+        }
+
+        li{
+          background-color: v.$blue-75;
+          color: v.$white;
+          padding: 5px 10px;
+        }
+      }
+    }
+  }
+}
