@@ -2,7 +2,7 @@
 get_header(); ?>
 <main class="woocommerce">
     <!-- Hero -->
-    <?php get_template_part('/template-parts/hero-page'); ?>
+    <?php get_template_part('/template-parts/hero-shop'); ?>
     <!-- Content -->
     <section class="">
         <div class="woocommerce-content container">

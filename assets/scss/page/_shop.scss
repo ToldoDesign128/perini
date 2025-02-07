@@ -1,0 +1,135 @@
+// Single Post
+
+@use "/assets/scss/variable/variable" as v;
+
+.woocommerce {
+  .woocommerce-content {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 0 20px;
+    @include v.respond-to(lg) {
+      margin-top: 100px;
+      margin-bottom: 100px;
+      padding: 0;
+    }
+    @include v.respond-to(xl) {
+      margin-top: 120px;
+      margin-bottom: 120px;
+    }
+    .woocommerce-result-count {
+      margin-top: 20px;
+      margin-bottom: 0;
+    }
+    .woocommerce-ordering {
+      width: 100%;
+      margin-top: 20px;
+      margin-bottom: 40px;
+      @include v.respond-to(lg) {
+        margin-top: 10px;
+        width: fit-content;
+        margin-bottom: 60px;
+      }
+      .orderby {
+        width: 100%;
+        padding: 10px 20px;
+      }
+    }
+
+    .products {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+
+      &::before {
+        display: none;
+      }
+
+      @include v.respond-to(md) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include v.respond-to(lg) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+      }
+      @include v.respond-to(xl) {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+      }
+      .product {
+        margin: 0;
+        width: 100% !important;
+        float: none;
+        clear: none;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        border: 1px solid v.$gray-100;
+
+        .woocommerce-LoopProduct-link {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+          .onsale {
+            width: fit-content;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 0;
+            border-radius: 0;
+            z-index: 1;
+            padding: 10px 20px;
+            background-color: v.$blue-50;
+            color: v.$white;
+          }
+          img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1;
+            object-fit: cover;
+            transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+          }
+          .woocommerce-loop-product__title {
+            color: v.$blue-100;
+            font-weight: 400;
+            font-size: clamp(22px, 1.4vw, 24px);
+            letter-spacing: 0.25px;
+            line-height: 1.3;
+            transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+          }
+
+          @include v.respond-to(lg) {
+            &:hover {
+              img {
+                filter: brightness(120%);
+              }
+              .woocommerce-loop-product__title {
+                color: v.$blue-50;
+              }
+            }
+          }
+        }
+        .button {
+          padding: 10px 20px;
+          background-color: v.$blue-75;
+          color: v.$white;
+          border: 1px solid v.$blue-75;
+          text-align: center;
+          transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+          @include v.respond-to(lg) {
+            padding: 15px 30px;
+            &:hover {
+              background-color: v.$white;
+              color: v.$blue-75;
+            }
+          }
+        }
+      }
+    }
+  }
+}

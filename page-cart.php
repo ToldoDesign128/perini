@@ -3,7 +3,7 @@
 
 get_header(); ?>
 
-<main class="site-main">
+<main class="carrello">
     <!-- Hero -->
     <?php get_template_part('/template-parts/hero-page'); ?>
     <div class="container">
