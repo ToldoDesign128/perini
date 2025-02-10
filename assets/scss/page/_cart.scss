@@ -1,0 +1,62 @@
+// Carrello
+
+@use "/assets/scss/variable/variable" as v;
+
+.carrello {
+  .cart-content {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 0 20px;
+
+    @include v.respond-to(lg) {
+      margin-top: 80px;
+      margin-bottom: 100px;
+      padding: 0;
+    }
+    @include v.respond-to(xl) {
+      margin-top: 100px;
+      margin-bottom: 120px;
+    }
+    .woocommerce-cart-form {
+      .actions {
+        .coupon {
+          display: flex;
+          gap: 20px;
+          #coupon_code {
+            width: max-content;
+          }
+        }
+      }
+    }
+    .cart-collaterals{
+        margin-top: 30px;
+    
+        @include v.respond-to(lg) {
+          margin-top: 60px;
+        }
+        @include v.respond-to(xl) {
+          margin-top: 80px;
+        } 
+    }
+    button.button {
+      padding: 10px 20px;
+      font-weight: 400;
+      font-size: clamp(15px, 1vw, 17px);
+      letter-spacing: 0.5px;
+      background-color: v.$blue-50;
+      border: 1px solid v.$blue-50;
+      color: v.$white;
+      line-height: 1;
+      text-transform: uppercase;
+      transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+      @include v.respond-to(lg) {
+        &:hover {
+          border: 1px solid v.$blue-50;
+          background-color: v.$white;
+          color: v.$blue-100;
+        }
+      }
+    }
+  }
+}
