@@ -21,10 +21,23 @@
       .actions {
         .coupon {
           display: flex;
+          flex-direction: column;
           gap: 20px;
-          #coupon_code {
-            width: max-content;
+          @include v.respond-to(lg) {
+            flex-direction: row;
           }
+          #coupon_code {
+            width: 100%;
+            @include v.respond-to(lg) {
+              width: max-content;
+            }
+          }
+          .button{
+            width: 100%;
+          }
+        }
+        button.button{
+          width: auto;
         }
       }
     }
