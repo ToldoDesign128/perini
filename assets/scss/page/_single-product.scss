@@ -1,0 +1,52 @@
+// Checkout
+
+@use "/assets/scss/variable/variable" as v;
+
+.single-product {
+  .woocommerce-content {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 0 20px;
+
+    @include v.respond-to(lg) {
+      margin-top: 80px;
+      margin-bottom: 100px;
+      padding: 0;
+    }
+    @include v.respond-to(xl) {
+      margin-top: 100px;
+      margin-bottom: 120px;
+    }
+    .product {
+      .upsells {
+        display: none;
+      }
+      .woocommerce-tabs {
+        .woocommerce-Tabs-panel {
+          h2 {
+            margin-bottom: 15px;
+            color: v.$blue-75;
+            font-weight: 400;
+            font-size: clamp(40px, 1.8vw, 48px);
+            line-height: 1.2;
+            
+            @include v.respond-to(lg) {
+              margin-bottom: 20px;
+            }
+          }
+        }
+      }
+      .related {
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+          color: v.$blue-75;
+          font-weight: 400;
+          font-size: clamp(40px, 1.8vw, 48px);
+          line-height: 1.2;
+        }
+      }
+    }
+  }
+}

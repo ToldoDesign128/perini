@@ -1,4 +1,9 @@
 <?php
+/*
+  *
+  * Template Name: Generale
+  *
+  */
 get_header(); ?>
 <main class="general-page">
     <!-- Hero -->

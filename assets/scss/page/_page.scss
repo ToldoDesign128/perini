@@ -5,11 +5,13 @@
 @use "/assets/scss/page/assistenza" as assistenza;
 @use "/assets/scss/page/blog" as blog;
 @use "/assets/scss/page/cart" as cart;
+@use "/assets/scss/page/checkout" as checkout;
 @use "/assets/scss/page/contatti" as contatti;
 @use "/assets/scss/page/home/front-page" as home;
 @use "/assets/scss/page/faq" as faq;
 @use "/assets/scss/page/gallery" as gallery;
 @use "/assets/scss/page/single-post" as single-post;
+@use "/assets/scss/page/single-product" as single-product;
 @use "/assets/scss/page/shop" as shop;
 
 @use "/assets/scss/variable/variable" as v;
