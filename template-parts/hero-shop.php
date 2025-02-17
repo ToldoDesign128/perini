@@ -14,7 +14,7 @@
     </div>
     <span class="bg-gradient"></span>
     <?php
-    $img_bg = get_field('immagine_sfondo', 6);
+    $img_bg = get_field('immagine_sfondo', 30);
     if (!empty($img_bg)): ?>
         <img class="img-bg" src="<?php echo esc_url($img_bg['url']); ?>" alt="<?php the_title(); ?>" />
     <?php endif; ?>

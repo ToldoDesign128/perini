@@ -26,7 +26,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-    
+
     <!-- Top Bar -->
     <section class="top-bar">
         <div class="top-bar-wrap container">
@@ -174,15 +174,16 @@
                 ));
                 ?>
             </nav>
-
             <div class="header-extras">
                 <!-- Sezione di ricerca -->
                 <div class="header-search">
                     <?php get_search_form(); ?>
                 </div>
-
                 <!-- Icone di wishlist e carrello -->
                 <div class="header-icons">
+                    <a href="<?php echo wc_get_page_permalink('myaccount'); ?>" class="account-icon">
+                        <i class="fas fa-user"></i>
+                    </a>
                     <a href="<?php echo wc_get_cart_url(); ?>" class="cart-icon">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="cart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>

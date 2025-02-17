@@ -129,7 +129,7 @@ header {
           a {
             text-transform: uppercase;
             opacity: 1;
-            transition: all .4s cubic-bezier(.215, .61, .355, 1);
+            transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
 
             @include v.respond-to(lg) {
               &:hover {
@@ -138,6 +138,12 @@ header {
             }
           }
           .submenu-toggle {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            text-transform: uppercase;
+            cursor: pointer;
+
             .fa-chevron-down {
               font-size: 1rem;
             }
@@ -171,22 +177,22 @@ header {
               max-width: 1640px;
             }
 
-            li{
+            li {
               display: flex;
               flex-direction: column;
               align-items: flex-start;
               justify-content: flex-start;
 
-              a{
+              a {
                 text-transform: none;
                 opacity: 1;
-                transition: all .4s cubic-bezier(.215, .61, .355, 1);
-                
+                transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+
                 &:hover {
                   opacity: 0.5;
                 }
               }
-              .terzo-livello{
+              .terzo-livello {
                 position: relative;
                 top: auto;
                 left: auto;
@@ -197,10 +203,10 @@ header {
                 background-color: none;
                 gap: 10px;
 
-                li{
-                  a{
+                li {
+                  a {
                     color: v.$gray-50;
-                    font-size: .9rem;
+                    font-size: 0.9rem;
                   }
                 }
               }
@@ -278,6 +284,16 @@ header {
         display: flex;
         align-items: center;
         gap: 20px;
+
+        .account-icon {
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: v.$gray-0;
+          border-radius: 50px;
+        }
 
         .cart-icon {
           position: relative;
@@ -373,8 +389,11 @@ header {
         }
 
         .submenu-toggle {
-          display: inline-block;
-          cursor: pointer;
+          color: v.$white;
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          text-transform: uppercase;
 
           .fa-chevron-down {
             display: inline-block;
@@ -406,7 +425,7 @@ header {
           max-height: 300px;
         }
       }
-      .terzo-livello{
+      .terzo-livello {
         display: none !important;
       }
     }
