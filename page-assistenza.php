@@ -63,9 +63,14 @@ get_header(); ?>
                 <ul class="repeater-ricambi">
                     <?php
                     while (have_rows('repeater_ricambi')) : the_row();
+                        $img_ricambi = get_sub_field('logo');
                         $text_ricambi = get_sub_field('testo_ricambio'); ?>
                         <li class="ricambi-item">
-                            <?php echo esc_html($text_ricambi); ?>
+                            <?php
+                            if (!empty($img_ricambi)): ?>
+                                <img src="<?php echo esc_url($img_ricambi['url']); ?>" alt="<?php echo esc_attr($img_ricambi['alt']); ?>" />
+                            <?php endif;
+                            echo esc_html($text_ricambi); ?>
                         </li>
                     <?php
                     endwhile; ?>
@@ -84,9 +89,14 @@ get_header(); ?>
                 <ul class="repeater-centro">
                     <?php
                     while (have_rows('repeater_centro_assistenza')) : the_row();
+                        $img_centro = get_sub_field('logo_centro');
                         $text_centro = get_sub_field('testo_item'); ?>
                         <li class="centro-item">
-                            <?php echo esc_html($text_centro); ?>
+                            <?php
+                            if (!empty($img_centro)): ?>
+                                <img src="<?php echo esc_url($img_centro['url']); ?>" alt="<?php echo esc_attr($img_centro['alt']); ?>" />
+                            <?php endif;
+                            echo esc_html($text_centro); ?>
                         </li>
                     <?php
                     endwhile;

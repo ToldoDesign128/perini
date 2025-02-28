@@ -89,34 +89,27 @@
             <div class="link-page">
 
                 <?php
-                $link_1 = get_field('link_1', 'option');
-                if ($link_1):
-                    $link_1_url = $link_1['url'];
-                    $link_1_title = $link_1['title'];
-                    $link_1_target = $link_1['target'] ? $link_1['target'] : '_self';
-                ?>
+                if (have_rows('repeater_link_top', 'option')):
+                    while (have_rows('repeater_link_top', 'option')) : the_row();
 
-                    <a class="link-1 text-small" href="<?php echo esc_url($link_1_url); ?>" target="<?php echo esc_attr($link_1_target); ?>"><?php echo esc_html($link_1_title); ?></a>
+                        $link = get_sub_field('link', 'option');
+                        if ($link):
+                            $link_url = $link['url'];
+                            $link_title = $link['title'];
+                            $link_target = $link['target'] ? $link['target'] : '_self'; ?>
 
-                <?php endif;
+                            <a class="link-1 text-small" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
 
-                $link_2 = get_field('link_2', 'option');
-                if ($link_2):
-                    $link_2_url = $link_2['url'];
-                    $link_2_title = $link_2['title'];
-                    $link_2_target = $link_2['target'] ? $link_2['target'] : '_self';
-                ?>
-
-                    <a class="link-2 text-small" href="<?php echo esc_url($link_2_url); ?>" target="<?php echo esc_attr($link_2_target); ?>"><?php echo esc_html($link_2_title); ?></a>
-
-                <?php endif;
+                    <?php endif;
+                    endwhile;
+                endif;
 
                 $link_cta = get_field('link_preventivo', 'option');
                 if ($link_cta):
                     $link_cta_url = $link_cta['url'];
                     $link_cta_title = $link_cta['title'];
                     $link_cta_target = $link_cta['target'] ? $link_cta['target'] : '_self';
-                ?>
+                    ?>
 
                     <a class="cta" href="<?php echo esc_url($link_cta_url); ?>" target="<?php echo esc_attr($link_cta_target); ?>"><?php echo esc_html($link_cta_title); ?></a>
 

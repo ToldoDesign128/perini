@@ -23,7 +23,7 @@ get_header(); ?>
                             $btn_2 = get_sub_field('link_2'); ?>
                             <li class="card-item">
                                 <div class="card-icon">
-                                    <img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>">
+                                    <img class="icon-sizer" src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>">
                                 </div>
                                 <div class="card-content">
                                     <p class="title title-4 medium"><?php echo $title; ?></p>

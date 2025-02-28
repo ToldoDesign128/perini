@@ -59,7 +59,7 @@
 
                     <div class="info-item">
                         <?php if ($icon) : ?>
-                            <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>" />
+                            <img class="icon-sizer" src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>" />
                         <?php endif;
                         if ($sub_title_info) : ?>
                             <p class="titolo title-5 medium"><?php echo esc_html($sub_title_info); ?></p>

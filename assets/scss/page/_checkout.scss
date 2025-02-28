@@ -17,7 +17,12 @@
     margin-bottom: 120px;
   }
   #customer_details {
+    @include v.respond-to(lg) {
+      float: right;
+      width: 50%;
+    }
     .col-1 {
+      width: 100%;
       .woocommerce-billing-fields {
         h3 {
           color: v.$blue-100;
@@ -55,7 +60,16 @@
       }
     }
     .col-2 {
+      float: none;
+      width: 100%;
       .woocommerce-additional-fields {
+        margin-top: 20px;
+        margin-bottom: 50px;
+
+        @include v.respond-to(lg) {
+          margin-bottom: 80px;
+        }
+        
         h3 {
           color: v.$blue-100;
           font-weight: 400;
@@ -65,12 +79,6 @@
         }
         .woocommerce-additional-fields__field-wrapper {
           margin-top: 15px;
-          @include v.respond-to(lg) {
-            margin-top: 20px;
-          }
-          @include v.respond-to(xl) {
-            margin-top: 25px;
-          }
           textarea {
             padding: 10px;
             border: 1px solid v.$blue-75;
@@ -88,6 +96,7 @@
 
     @include v.respond-to(lg) {
       margin-top: 50px;
+      width: 48%;
     }
     @include v.respond-to(xl) {
       margin-top: 60px;
@@ -98,15 +107,19 @@
 
     @include v.respond-to(lg) {
       margin-top: 30px;
+      width: 48%;
     }
     @include v.respond-to(xl) {
       margin-top: 40px;
     }
     .woocommerce-checkout-payment {
+      display: flex;
+      flex-direction: column;
       border-radius: 0;
       background-color: v.$gray-0;
     }
     button#place_order {
+      margin-top: 20px;
       background-color: v.$blue-50;
       border: 1px solid v.$blue-50;
       color: v.$white;
@@ -117,6 +130,7 @@
       transition: all .6s cubic-bezier(.215, .61, .355, 1);
 
       @include v.respond-to(lg) {
+        margin-top: 30px;
        &:hover{
         background-color: v.$white;
         color: v.$blue-50;

@@ -80,7 +80,7 @@ get_header(); ?>
                     $text_number = get_sub_field('descrizione'); ?>
 
                     <li class="repeater-item">
-                        <img src="<?php echo esc_url($img_number['url']); ?>" alt="<?php echo esc_attr($img_number['alt']); ?>" />
+                        <img class="icon-sizer" src="<?php echo esc_url($img_number['url']); ?>" alt="<?php echo esc_attr($img_number['alt']); ?>" />
                         <h4 class="title title-4 medium"><?php echo $title_number; ?></h4>
                         <span class="value title-2 medium"><?php echo $value_number; ?></span>
                         <p class="text text-body"><?php echo $text_number; ?></p>

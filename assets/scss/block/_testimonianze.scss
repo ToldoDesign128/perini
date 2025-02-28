@@ -19,6 +19,13 @@
         color: v.$blue-75;
     }
 
+    .recensioni{
+      margin-top: 30px;
+      @include v.respond-to(lg) {
+        margin-top: 40px;
+      }
+    }
+
     ul {
       margin-top: 40px;
       @include v.respond-to(lg) {

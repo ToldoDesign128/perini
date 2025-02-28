@@ -123,4 +123,4 @@ if (function_exists('acf_add_options_page')) {
 require get_template_directory() . '/functions-parts/header-walker.php';
 
 // CPT
-require get_template_directory() . '/functions-parts/cpt-testimonianze.php';
+// require get_template_directory() . '/functions-parts/cpt-testimonianze.php';

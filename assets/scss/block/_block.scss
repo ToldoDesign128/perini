@@ -8,3 +8,18 @@
 @use '/assets/scss/block/form' as form;
 @use '/assets/scss/block/swiper' as swiper;
 @use '/assets/scss/block/testimonianze' as testimonianze;
+
+@use "/assets/scss/variable/variable" as v;
+
+.icon-sizer{
+    max-width: 80px;
+    @include v.respond-to(md){
+        max-width: 90px;
+    }
+    @include v.respond-to(lg){
+        max-width: 100px;
+    }
+    @include v.respond-to(xl){
+        max-width: 110px;
+    }
+}
