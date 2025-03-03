@@ -22,6 +22,11 @@ class Custom_Walker_Nav_Menu extends Walker_Nav_Menu
         $classes = empty($item->classes) ? array() : (array) $item->classes;
         $classes[] = 'menu-item-' . $item->ID;
 
+        // Add class if item has children
+        if (in_array('menu-item-has-children', $item->classes)) {
+            $classes[] = 'menu-item-has-children';
+        }
+
         $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
         $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
 
@@ -63,16 +68,5 @@ class Custom_Walker_Nav_Menu extends Walker_Nav_Menu
         $item_output .= $args->after;
 
         $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
-    }
-
-    function end_el(&$output, $item, $depth = 0, $args = array())
-    {
-        $output .= "</li>\n";
-    }
-
-    function end_lvl(&$output, $depth = 0, $args = array())
-    {
-        $indent = str_repeat("\t", $depth);
-        $output .= "$indent</ul>\n";
     }
 }

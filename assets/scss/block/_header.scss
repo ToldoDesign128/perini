@@ -9,7 +9,7 @@
   background-color: v.$blue-75;
   padding: 20px;
 
-  @include v.respond-to(lg) {
+  @include v.respond-to(xl) {
     display: block;
   }
 
@@ -100,7 +100,7 @@ header {
 
     .header-logo {
       display: block;
-      max-width: 150px;
+      max-width: 100px;
 
       img {
         display: block;
@@ -111,7 +111,7 @@ header {
     .main-navigation {
       display: none;
 
-      @include v.respond-to(lg) {
+      @include v.respond-to(xl) {
         display: block;
       }
 
@@ -125,8 +125,12 @@ header {
           display: flex;
           align-items: center;
           gap: 10px;
+          font-size: clamp(13px, 0.9vw, 15px);
+          letter-spacing: 0.5px;
 
           a {
+            font-size: clamp(13px, 0.9vw, 15px);
+            letter-spacing: 0.5px;
             text-transform: uppercase;
             opacity: 1;
             transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -139,20 +143,20 @@ header {
           }
           .submenu-toggle {
             display: flex;
-            gap: 10px;
+            gap: 8px;
             align-items: center;
             text-transform: uppercase;
             cursor: pointer;
 
             .fa-chevron-down {
-              font-size: 1rem;
+              font-size: 0.8rem;
             }
           }
 
           .sub-menu {
             display: none;
             position: absolute;
-            top: 128px;
+            top: 98px;
             left: calc((100vw - 984px) / 2);
             background-color: v.$gray-0;
             padding: 40px;
@@ -235,7 +239,7 @@ header {
       align-items: center;
       gap: 40px;
 
-      @include v.respond-to(lg) {
+      @include v.respond-to(xl) {
         display: flex;
       }
 
@@ -285,7 +289,8 @@ header {
         align-items: center;
         gap: 20px;
 
-        .account-icon, .cart-icon {
+        .account-icon,
+        .cart-icon {
           width: 40px;
           height: 40px;
           display: flex;
@@ -327,7 +332,7 @@ header {
       cursor: pointer;
       transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
 
-      @include v.respond-to(lg) {
+      @include v.respond-to(xl) {
         display: none;
       }
       span {
@@ -363,7 +368,7 @@ header {
   padding: 60px 20px;
   transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
 
-  @include v.respond-to(lg) {
+  @include v.respond-to(xl) {
     display: none;
   }
 

@@ -4,10 +4,17 @@ jQuery("#hamburgerBtn").click(function () {
   jQuery("#mobileMenu").toggleClass("panel-active");
 });
 
-// Desktop Menu Hover
+// Desktop Menu
 jQuery(".main-navigation .menu-item-has-children .submenu-toggle").click(
   function () {
-    jQuery(".sub-menu").toggleClass("submenu-open");
+    var $submenu = jQuery(this).siblings(".sub-menu");
+    var $openSubmenu = jQuery(".main-navigation .submenu-open").not($submenu);
+
+    // Chiudi il pannello aperto
+    $openSubmenu.removeClass("submenu-open");
+
+    // Apri il nuovo pannello
+    $submenu.toggleClass("submenu-open");
   }
 );
 
@@ -16,6 +23,12 @@ jQuery(document).ready(function($) {
   $("#mobileMenu .submenu-toggle").click(function(e) {
     e.preventDefault();
     var $menuItem = $(this).closest(".menu-item-has-children");
+    var $openMenuItem = $("#mobileMenu .submenu-open").not($menuItem);
+
+    // Chiudi il pannello aperto
+    $openMenuItem.removeClass("submenu-open");
+
+    // Apri il nuovo pannello
     $menuItem.toggleClass("submenu-open");
   });
 });
