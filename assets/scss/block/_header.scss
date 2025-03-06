@@ -7,7 +7,7 @@
   z-index: 100;
   width: 100%;
   background-color: v.$blue-75;
-  padding: 20px;
+  padding: 5px 20px;
 
   @include v.respond-to(xl) {
     display: block;
@@ -51,11 +51,12 @@
       }
 
       .cta {
-        padding: 10px 20px;
+        padding: 10px;
         background-color: v.$gray-0;
         border: 1px solid v.$gray-0;
         color: v.$blue-100;
         transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+        line-height: 1;
 
         &:hover {
           background-color: v.$blue-100;
@@ -90,6 +91,7 @@ header {
 
   .header-wrap {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     padding: 20px 20px;
@@ -112,11 +114,20 @@ header {
       display: none;
 
       @include v.respond-to(xl) {
-        display: block;
+        border-top: 1px solid v.$gray-0;
+        margin-top: 20px;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
       }
 
       .nav-menu {
+        width: 100%;
         display: flex;
+        justify-content: space-between;
         align-items: center;
         gap: 20px;
         list-style: none;
@@ -156,7 +167,7 @@ header {
           .sub-menu {
             display: none;
             position: absolute;
-            top: 98px;
+            top: 160px;
             left: calc((100vw - 984px) / 2);
             background-color: v.$gray-0;
             padding: 40px;
@@ -234,6 +245,50 @@ header {
         }
       }
     }
+    .searchform {
+      display: none;
+
+      @include v.respond-to(xl) {
+        display: block;
+      }
+
+      input[type="text"] {
+        padding: 10px;
+        border: 1px solid v.$gray-50;
+
+        &:focus,
+        &:active,
+        &:focus-visible {
+          outline: none;
+        }
+
+        @include v.respond-to(xl) {
+          width: 400px;
+        }
+      }
+      input[type="submit"] {
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: v.$blue-100;
+        color: v.$white;
+        border: 1px solid v.$blue-100;
+        transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+        &:focus,
+        &:active,
+        &:focus-visible {
+          outline: none;
+          border-radius: 0;
+        }
+
+        &:hover {
+          background-color: v.$white;
+          color: v.$blue-100;
+          border: 1px solid v.$blue-100;
+          opacity: 1;
+        }
+      }
+    }
     .header-extras {
       display: none;
       align-items: center;
@@ -241,48 +296,7 @@ header {
 
       @include v.respond-to(xl) {
         display: flex;
-      }
-
-      .searchform {
-        display: none;
-
-        @include v.respond-to(xl) {
-          display: block;
-        }
-
-        input[type="text"] {
-          padding: 10px;
-          border: 1px solid v.$gray-50;
-
-          &:focus,
-          &:active,
-          &:focus-visible {
-            outline: none;
-          }
-        }
-        input[type="submit"] {
-          padding: 10px 20px;
-          cursor: pointer;
-          background-color: v.$blue-100;
-          color: v.$white;
-          border: 1px solid v.$blue-100;
-          transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
-
-          &:focus,
-          &:active,
-          &:focus-visible {
-            outline: none;
-            border-radius: 0;
-          }
-
-          &:hover {
-            background-color: v.$white;
-            color: v.$blue-100;
-            border: 1px solid v.$blue-100;
-            opacity: 1;
-          }
-        }
-      }
+      }     
 
       .header-icons {
         display: flex;
@@ -358,30 +372,36 @@ header {
   }
 }
 .mobile-panel {
+  overflow: scroll;
+  scrollbar-width: none;
+  height: 100%;
   width: 100vw;
   display: block;
   position: fixed;
   z-index: 100;
-  top: 120px;
+  top: 95px;
   right: -100%;
   background-color: v.$gray-50;
-  padding: 60px 20px;
+  padding: 60px 20px 120px 20px;
   transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
 
   @include v.respond-to(xl) {
     display: none;
   }
 
-  .main-navigation {
+  .main-navigation-mobile {
     .nav-menu {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      gap: 20px;
       list-style: none;
 
       li {
         width: 100%;
+        padding: 10px 0;
+        border-bottom: 1px solid v.$gray-0;
+        font-size: clamp(22px, 1.4vw, 24px);
+        letter-spacing: 0.25px;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -389,6 +409,8 @@ header {
         gap: 0 10px;
 
         a {
+          font-size: clamp(22px, 1.4vw, 24px);
+          letter-spacing: 0.25px;
           color: v.$white;
           text-transform: uppercase;
         }
@@ -415,7 +437,13 @@ header {
           transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
 
           li {
+            padding: 0;
             border-bottom: none;
+            a {
+              padding: 5px 0;
+              font-size: clamp(15px, 1vw, 17px);
+              letter-spacing: 0.5px;
+            }
           }
         }
       }
@@ -433,6 +461,22 @@ header {
       .terzo-livello {
         display: none !important;
       }
+    }
+  }
+  .link-page {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    a {
+      text-align: right;
+      width: 100%;
+      padding: 10px 0 0 0;
+      font-size: clamp(22px, 1.4vw, 24px);
+      letter-spacing: 0.25px;
+      color: v.$white;
+      text-transform: uppercase;
     }
   }
   .header-extras {
@@ -508,6 +552,7 @@ header {
             top: -15px;
             right: -15px;
             font-size: clamp(10px, 0.8vw, 13px);
+            line-height: 1;
             background-color: v.$blue-50;
             color: v.$white;
             border-radius: 200px;

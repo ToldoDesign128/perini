@@ -157,21 +157,12 @@
             <a href="<?php echo home_url(); ?>" class="header-logo">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/Logo.png" alt="Logo">
             </a>
-            <nav class="main-navigation">
-                <?php
-                wp_nav_menu(array(
-                    'theme_location' => 'primary',
-                    'container' => false,
-                    'menu_class' => 'nav-menu',
-                    'walker' => new Custom_Walker_Nav_Menu()
-                ));
-                ?>
-            </nav>
+            
+            <!-- Sezione di ricerca -->
+            <div class="header-search">
+                <?php get_search_form(); ?>
+            </div>
             <div class="header-extras">
-                <!-- Sezione di ricerca -->
-                <div class="header-search">
-                    <?php get_search_form(); ?>
-                </div>
                 <!-- Icone di wishlist e carrello -->
                 <div class="header-icons">
                     <a href="<?php echo wc_get_page_permalink('myaccount'); ?>" class="account-icon">
@@ -184,6 +175,17 @@
                 </div>
             </div>
 
+            <nav class="main-navigation">
+                <?php
+                wp_nav_menu(array(
+                    'theme_location' => 'primary',
+                    'container' => false,
+                    'menu_class' => 'nav-menu',
+                    'walker' => new Custom_Walker_Nav_Menu()
+                ));
+                ?>
+            </nav>
+
             <div id="hamburgerBtn" class="hamburger">
                 <span></span>
                 <span></span>
@@ -193,7 +195,7 @@
     </header>
 
     <div id="mobileMenu" class="mobile-panel">
-        <nav class="main-navigation">
+        <nav class="main-navigation-mobile">
             <?php
             wp_nav_menu(array(
                 'theme_location' => 'primary',
@@ -204,12 +206,30 @@
             ?>
         </nav>
 
+        <div class="link-page">
+            <?php
+            if (have_rows('repeater_link_top', 'option')):
+                while (have_rows('repeater_link_top', 'option')) : the_row();
+
+                    $link = get_sub_field('link', 'option');
+                    if ($link):
+                        $link_url = $link['url'];
+                        $link_title = $link['title'];
+                        $link_target = $link['target'] ? $link['target'] : '_self'; ?>
+
+                        <a class="link-1 text-small" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
+
+                <?php endif;
+                endwhile;
+            endif; ?>
+
+        </div>
+
         <div class="header-extras">
             <!-- Sezione di ricerca -->
             <div class="header-search">
                 <?php get_search_form(); ?>
             </div>
-
             <div class="mobile-shop">
                 <?php
                 $link_2 = get_field('link_2', 'option');
@@ -231,6 +251,5 @@
                     </a>
                 </div>
             </div>
-
         </div>
     </div>
